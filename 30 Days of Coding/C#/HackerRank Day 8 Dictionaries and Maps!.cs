@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 class Solution 
 {
     static void Main(String[] args) 
@@ -17,9 +16,12 @@ class Solution
             string[] line = Console.ReadLine().Split(' ');
             phonebook[line[0]] = line[1];
         }
-
+        Check_name(phonebook);
+    }
+    static void Check_name(Dictionary<string,string> phonebook)
+    {
         string name;
-        while ((name = Console.ReadLine()) != null) {
+        while ((name = Console.ReadLine()) != null && name.Length>0) {
             if (phonebook.ContainsKey(name)) {
                 Console.WriteLine(name + "=" + phonebook[name]);
             }
